@@ -9,8 +9,7 @@
 
 (defn even-fibonacci-sum []
   (loop 
-   [current 0 next 1 sum 0]
-    (print current "\n")
+   [current 0 next 1 sum 0] 
     (if (>= current 4000000)
       sum
       (recur next (+ next current) (make-sum current sum)))))

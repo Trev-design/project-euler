@@ -10,7 +10,7 @@
 (defn largest-prime-factor []
   (loop [number 600851475143 divisor 2]
     (if (>= (* divisor divisor) number)
-      number
+      (print number "\n")
       (recur (devide number divisor) (inc divisor)))))
 
 

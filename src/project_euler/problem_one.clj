@@ -13,7 +13,7 @@
     sum result]
     (if (< iteration upper-bound)
       (recur (inc iteration) (make-sum iteration sum))
-      sum)))
+      (print sum "\n"))))
 
 
 (defn problem-one []

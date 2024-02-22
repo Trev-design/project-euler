@@ -11,7 +11,7 @@
   (loop 
    [current 0 next 1 sum 0] 
     (if (>= current 4000000)
-      sum
+      (print sum "\n")
       (recur next (+ next current) (make-sum current sum)))))
 
 

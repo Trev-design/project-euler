@@ -1,24 +1,9 @@
 (ns project-euler.core)
 
-
-(defn make-sum [iteration current-result]
-  (if (or (= (mod iteration 3) 0) (= (mod iteration 5) 0))
-    (+ current-result iteration)
-    current-result))
-
-
-(defn multiple-of-three-or-five [lower-bound upper-bound result]
-  (loop 
-   [iteration lower-bound
-    sum result]
-    (if (< iteration upper-bound)
-      (recur (inc iteration) (make-sum iteration sum))
-      sum)))
-
-
-(defn problem-one []
-  (multiple-of-three-or-five 1 1000 0))
+(require '[project-euler.problem-one])
+(require '[project-euler.problem-two])
 
 
 (defn main []
-  (print "hello world!\n"))
+  (print (project-euler.problem-one/problem-one) "\n")
+  (print (project-euler.problem-two/problem-two) "\n"))

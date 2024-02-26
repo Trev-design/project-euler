@@ -1,6 +1,5 @@
-(ns project-euler.problem-seven)
-
-(require '[project-euler.prime-helper :as primes])
+(ns project-euler.problem-seven
+  (:require [project-euler.prime-helper :as primes]))
 
 
 (defn prime-at-10001 []

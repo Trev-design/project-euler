@@ -15,4 +15,5 @@
   (project-euler.problem-three/problem-three)
   (project-euler.problem-four/problem-four)
   (project-euler.problem-five/problem-five)
-  (project-euler.prime-helper/sieve 100))
+  (print (count (project-euler.prime-helper/prime-seq (project-euler.prime-helper/sieve 2000000))) "\n")
+  (project-euler.prime-helper/prime-seq (project-euler.prime-helper/sieve 29)))

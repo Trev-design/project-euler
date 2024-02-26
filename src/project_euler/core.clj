@@ -7,6 +7,7 @@
 (require '[project-euler.problem-four])
 (require '[project-euler.problem-five])
 (require '[project-euler.problem-six])
+(require '[project-euler.problem-seven])
 (require '[project-euler.prime-helper])
 
 
@@ -17,5 +18,6 @@
   (project-euler.problem-four/problem-four)
   (project-euler.problem-five/problem-five)
   (project-euler.problem-six/problem-six)
+  (project-euler.problem-seven/problem-seven)
   (print (count (project-euler.prime-helper/prime-seq (project-euler.prime-helper/sieve 2000000))) "\n")
   (project-euler.prime-helper/prime-seq (project-euler.prime-helper/sieve 29)))

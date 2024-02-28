@@ -5,9 +5,9 @@
   (if (< upper-bound 2)
     []
     (let [sqrt-n (int (Math/ceil (Math/sqrt upper-bound)))
-          sieve-size (inc (bit-shift-right upper-bound 1))]
+          sieve-size (inc (bit-shift-right upper-bound 1))] 
       (loop [current-number 3
-             primes (transient (vec (repeat sieve-size true)))]
+             primes (transient (vec (repeat sieve-size true)))] 
         (if (<= current-number sqrt-n) 
           (if (= (nth primes (bit-shift-right current-number 1)) true)
             (recur

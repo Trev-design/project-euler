@@ -1,28 +1,21 @@
-(ns [project-euler.problem-nine :refer [pythagorean-triplet]])
+(ns project-euler.problem-nine)
 
 
-(defn find-pythagorean-triplet [first-edge]
-  (loop [first-edge first-edge 
-         second-edge 1]
-    (if (<= (+ first-edge (* second-edge 2)) 1000)
-      (let [hypothenuse (- 1000 first-edge second-edge)] 
-        (if (= (+ (Math/pow first-edge 2) (Math/pow first-edge 2)) (Math/pow hypothenuse 2)) 
-          {:a first-edge :b second-edge :c hypothenuse} 
-          (recur first-edge (inc second-edge))))
-      (pythagorean-triplet (inc first-edge)))))
+(defn pythagorean-triplet []
+  (loop [n  1 m (inc n)]
+    (let [a (* 2 n m) b (- (* m m) (* n n)) c (+ (* m m) (* n n)) sum (+ a b c)]
+      (cond
+        (= sum 1000) {:a a :b b :c c}
+        (< sum 1000) (recur n (inc m))
+        (> sum 1000) (recur (inc n) (+ 2 n))))))
 
-
-(defn pythagorean-triplet [first-edge]
-  (if (< first-edge 334)
-    (find-pythagorean-triplet first-edge)
-    {:error "edge to big"}))
 
 
 (defn calculate-product [results]
   (if (contains? results :error)
     results
-    (->> (vals results) (reduce +))))
+    (->> (vals results) (reduce *))))
 
 
 (defn problem-nine []
-  (-> 1 (pythagorean-triplet) (calculate-product) (print "\n")))
+  (-> (pythagorean-triplet) (calculate-product) (print "\n")))
